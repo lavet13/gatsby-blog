@@ -1,8 +1,10 @@
-import type { GatsbyConfig } from "gatsby";
+import type { GatsbyConfig } from 'gatsby';
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://gatsby-blog.netlify.com`,
+    title: `Gatsby Blog`,
+    description: `Blog`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -11,8 +13,20 @@ const config: GatsbyConfig = {
   plugins: [
     {
       // https://chakra-ui.com/getting-started/gatsby-guide
-      resolve: "@chakra-ui/gatsby-plugin",
+      resolve: '@chakra-ui/gatsby-plugin',
+
       options: {},
+    },
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: 'gatsby-source-filesystem',
+
+      options: {
+        name: `blog-images`,
+        path: `${__dirname}/src/assets/images/`,
+      },
     },
   ],
 };

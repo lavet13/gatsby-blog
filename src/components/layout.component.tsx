@@ -1,12 +1,12 @@
 import { Box, Container } from '@chakra-ui/react';
 import React, { FC, PropsWithChildren } from 'react';
 
-import Header from './header';
+import { Slice } from 'gatsby';
 
 const Layout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <Container maxW='container.lg' py='2'>
-      <Header />
+      <Slice alias='header' />
       <Box as='main'>{children}</Box>
     </Container>
   );

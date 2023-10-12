@@ -16,8 +16,18 @@ export const createPages: GatsbyNode['createPages'] = async ({ actions }) => {
   createSlice({
     id: `header`,
     component: path.resolve('./src/components/header.tsx'),
-    context: {
-      TEST: 'TESTING...',
-    },
   });
 };
+
+// export const onCreatePage: GatsbyNode['onCreatePage'] = async ({
+//   page,
+//   actions,
+// }) => {
+//   const { createPage } = actions;
+
+//   if (page.path.match(/^\/app/)) {
+//     page.matchPath = '/app/*';
+
+//     createPage(page);
+//   }
+// };

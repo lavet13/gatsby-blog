@@ -6,9 +6,17 @@ import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import { Flex } from '@chakra-ui/react';
 import SEO from '../components/seo.component';
+import { FileNode } from 'gatsby-plugin-image/dist/src/components/hooks';
+import { NonNullableFields } from '../common/types/types';
 
-const IndexPage: React.FC<PageProps<Queries.MaxImageQuery>> = ({ data }) => {
-  const image = getImage(data.file!.childImageSharp);
+const IndexPage: React.FC<PageProps<Queries.MaxImageQuery>> = props => {
+  console.log({ props });
+
+  const {
+    data: { file },
+  } = props;
+
+  const image = getImage(file as NonNullableFields<typeof file>);
 
   return (
     <Flex justify='center'>
@@ -25,7 +33,7 @@ export const pageQuery = graphql`
       childImageSharp {
         gatsbyImageData(
           placeholder: NONE
-          formats: [AUTO, WEBP, AVIF]
+          formats: [AUTO, WEBP]
           backgroundColor: "rgba(0, 0, 0, 0.2)"
         )
       }

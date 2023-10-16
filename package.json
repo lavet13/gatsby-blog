@@ -30,8 +30,8 @@
     "gatsby-plugin-sharp": "^5.12.1",
     "gatsby-source-filesystem": "^5.12.0",
     "gatsby-transformer-sharp": "^5.12.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react": "0.0.0-experimental-67cc9ba87-20231016",
+    "react-dom": "0.0.0-experimental-67cc9ba87-20231016"
   },
   "devDependencies": {
     "@chakra-ui/cli": "^2.3.0",

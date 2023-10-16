@@ -13,7 +13,6 @@ const ThemeToggle: FC<Partial<ThemeToggleProps & PageProps>> = ({
   colorScheme,
   pageContext,
 }) => {
-  console.log({ pageContext });
   const { toggleColorMode: toggleMode } = useColorMode();
 
   const ToggleIcon = useColorModeValue(SunIcon, MoonIcon);

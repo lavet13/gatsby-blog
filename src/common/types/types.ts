@@ -1,4 +1,4 @@
-export type NonNullableFields<T extends object> = {
+export type NonNullableFields<T> = {
   [K in keyof T]: NonNullable<T[K]>;
 };
 

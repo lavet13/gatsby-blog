@@ -19,15 +19,15 @@ export const createPages: GatsbyNode['createPages'] = async ({ actions }) => {
   });
 };
 
-// export const onCreatePage: GatsbyNode['onCreatePage'] = async ({
-//   page,
-//   actions,
-// }) => {
-//   const { createPage } = actions;
+export const onCreatePage: GatsbyNode['onCreatePage'] = async ({
+  page,
+  actions,
+}) => {
+  const { createPage } = actions;
 
-//   if (page.path.match(/^\/app/)) {
-//     page.matchPath = '/app/*';
+  if (page.path.match(/^\/image-url/)) {
+    page.matchPath = '/image-url/*';
 
-//     createPage(page);
-//   }
-// };
+    createPage(page);
+  }
+};
